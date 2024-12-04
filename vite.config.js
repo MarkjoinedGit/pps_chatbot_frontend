@@ -9,7 +9,7 @@ export default defineConfig({
       "/7800": {
         target: "https://zep.hcmute.fit",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
     },
   },
