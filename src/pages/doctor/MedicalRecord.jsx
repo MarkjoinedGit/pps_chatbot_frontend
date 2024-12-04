@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { getAllRecords } from "../../controllers/medicalRcController";
 import Record from "../../components/Record";
 import { getAllUserInfo } from "../../controllers/userController";
-import UserInfo from "../../components/userInfo";
+import UserInfo from "../../components/UserInfo";
 import { getBookingByDrId } from "../../controllers/bookingController";
 import { UserContext } from "../../contexts/UserContext";
 import Booking from "../../components/Booking";
