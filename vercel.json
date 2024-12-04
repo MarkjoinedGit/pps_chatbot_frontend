@@ -1,8 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/7800/:path*",
-      "destination": "https://zep.hcmute.fit/:path*"
-    }
-  ]
-}
