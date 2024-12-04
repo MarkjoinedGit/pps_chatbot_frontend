@@ -1,10 +1,12 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 /******************* Get chats by id *******************/
 const getConvChat = async (_id) => {
   if (!_id) {
     throw Error("Conversation id is required");
   }
 
-  const res = await fetch(`/7800/chats/conv/${_id}`);
+  const res = await fetch(`${API_BASE_URL}/chats/conv/${_id}`);
 
   const data = res.json();
 
@@ -21,7 +23,7 @@ const createChat = async (conv_id, user_id, userchat) => {
     throw Error("Conversation id and userchat is required");
   }
 
-  const res = await fetch("/7800/chats/create", {
+  const res = await fetch(`${API_BASE_URL}/chats/create`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",

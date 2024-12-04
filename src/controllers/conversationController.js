@@ -1,6 +1,8 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 /******************* Get all chats *******************/
 const getConversations = async () => {
-  const res = await fetch("/7800/conversations");
+  const res = await fetch(`${API_BASE_URL}/conversations`);
   const data = await res.json();
   if (!res.ok) {
     throw Error(data.detail);
@@ -10,7 +12,7 @@ const getConversations = async () => {
 
 /******************* Get user chats *******************/
 const getUserConversations = async (email) => {
-  const res = await fetch("/7800/conversations/user", {
+  const res = await fetch(`${API_BASE_URL}/conversations/user`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",
@@ -26,7 +28,7 @@ const getUserConversations = async (email) => {
 
 /********************* Delete conversation *********************/
 const deleteConversation = async (_id) => {
-  const res = await fetch(`/7800/conversations/${_id}`, {
+  const res = await fetch(`${API_BASE_URL}/conversations/${_id}`, {
     method: "DELETE",
   });
 
@@ -46,7 +48,7 @@ const createConversation = async (user_id, topic) => {
     topic = `new chat ${randomString}`;
   }
 
-  const res = await fetch("/7800/conversations/create", {
+  const res = await fetch(`${API_BASE_URL}/conversations/create`, {
     method: "POST",
     headers: {
       "Content-type": "application/json",

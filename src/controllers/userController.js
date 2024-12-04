@@ -1,10 +1,12 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
 /******************* Login user *******************/
 const loginUser = async (email, password) => {
   if (!email || !password) {
     throw Error("Vui lòng nhập đầy đủ thông tin!");
   }
 
-  const res = await fetch("/7800/users/login", {
+  const res = await fetch(`${API_BASE_URL}/users/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -35,7 +37,7 @@ const registerUser = async (name, email, password, confirmPassword) => {
     throw Error("Mật khẩu không khớp");
   }
 
-  const res = await fetch("/7800/users/register", {
+  const res = await fetch(`${API_BASE_URL}/users/register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,7 +59,7 @@ const registerUser = async (name, email, password, confirmPassword) => {
 
 /******************* Logout user *******************/
 const logoutUser = async (_id) => {
-  const res = await fetch("/7800/users/logout", {
+  const res = await fetch(`${API_BASE_URL}/users/logout`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -76,7 +78,7 @@ const logoutUser = async (_id) => {
 
 /******************* Get user information *******************/
 const getUserInfo = async (_id) => {
-  const res = await fetch(`/7800/users/${_id}`);
+  const res = await fetch(`${API_BASE_URL}/users/${_id}`);
   const data = res.json();
   if (!res.ok) {
     throw Error(data.detail);
@@ -86,7 +88,7 @@ const getUserInfo = async (_id) => {
 
 /******************* Get user information *******************/
 const getAllUserInfo = async () => {
-  const res = await fetch("/7800/users/");
+  const res = await fetch(`${API_BASE_URL}/users/`);
   const data = res.json();
   if (!res.ok) {
     throw Error(data.detail);
