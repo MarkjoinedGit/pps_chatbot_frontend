@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-link {
+    @apply w-8 h-8 hover:bg-indigo-600 rounded-md grid place-items-center;
+  }
+
+  .card {
+    @apply bg-white px-6 py-10 rounded-lg shadow-lg;
+  }
+
+  .title {
+    @apply font-bold mb-8 text-2xl;
+  }
+
+  .input {
+    @apply block w-full rounded-md p-2 placeholder:text-sm border-0 outline-0 ring-1 ring-indigo-500 focus:ring-2 mb-4;
+  }
+
+  .btn {
+    @apply block w-full bg-indigo-500 text-white rounded-md p-2 active:bg-indigo-600;
+  }
+
+  .user_msg {
+    @apply text-right ml-auto flex flex-row-reverse bg-indigo-200 max-w-[70%] p-3 rounded-md;
+    /* Giới hạn chiều rộng tối đa và làm cho nội dung không bị tràn */
+    max-width: 70%; /* Điều chỉnh chiều rộng tối đa */
+    word-wrap: break-word; /* Ngắt từ khi cần thiết để tránh tràn ra ngoài */
+  }
+
+  .bot_msg {
+    @apply bg-gray-200 text-left mr-auto flex max-w-[70%] p-3 rounded-md;
+  }
+
+  .hide {
+    @apply invisible opacity-0;
+  }
+
+  .sticky-chat {
+    @apply sticky bottom-0 bg-white m-auto text-base px-3 w-full lg:px-4 xl:px-5;
+  }
+
+  .sticky-chat > div {
+    @apply mx-auto flex flex-1 gap-4 text-base md:gap-5 lg:gap-6 md:max-w-3xl lg:max-w-[40rem] xl:max-w-[48rem];
+  }
+
+  .sticky-chat-compoment {
+    @apply flex-col gap-2 border-0 outline-0 ring-1 p-2 ring-indigo-500 rounded-lg;
+  }
+
+  .btn-chat {
+    @apply text-white px-4 py-2 rounded-lg;
+  }
+}
