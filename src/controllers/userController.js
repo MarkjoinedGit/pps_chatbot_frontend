@@ -52,8 +52,8 @@ const registerUser = async (name, email, password, confirmPassword) => {
   }
 
   localStorage.setItem("email", email);
-  localStorage.setItem("user_id", data.user._id);
-  localStorage.setItem("is_doctor", data.user.isDoctor);
+  localStorage.setItem("user_id", data._id);
+  localStorage.setItem("is_doctor", data.isDoctor);
 
   return data;
 };
