@@ -25,8 +25,8 @@ const Register = () => {
       const data = await registerUser(name, email, password, confirmPassword);
       setUser({
         email,
-        user_id: data.user._id,
-        is_doctor: data.user.isDoctor,
+        user_id: data._id,
+        is_doctor: data.isDoctor,
         conversations: [],
       });
       navigate("/dashboard");
