@@ -18,6 +18,7 @@ const Chatbot = ({ activeComp, setActiveComp }) => {
       try {
         localStorage.removeItem("email");
         localStorage.removeItem("user_id");
+        localStorage.removeItem("is_doctor");
         navigate("/");
         setUser({
           email: null,
